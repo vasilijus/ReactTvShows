@@ -6,10 +6,15 @@ import Intro from '../Intro';
 class App extends Component {
 
   state = {
-    series: ["kill bill","kill bill2","Titanik"]
+    series: []
   }
 
-
+  componentDidMount() {
+    const series = ["Vikings"," Titanik", "gAm of thrones"];
+    setTimeout( () => {
+      this.setState({ series })
+    },2000);    
+  }
   render() {
     return (
       <div className="App">
