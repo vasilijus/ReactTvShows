@@ -32,26 +32,19 @@ class Series extends Component {
                 <Intro message="Here u can find all of your loved series" />
                 the length of series array: {this.state.series.length}<br /><br />
                 <div>
-                    <input 
-                    value={seriesName}
-                    type="text" 
-                    onChange={this.onSeriesInputChange} />
+                    <input value={seriesName} type="text" onChange={this.onSeriesInputChange} />
                 </div>    
                 { series.length === 0  && seriesName.trim() === '' 
-                    && 
-                    <p>Please enter series into the input</p>
+                    && <p>Please enter series into the input</p>
                 }
-                {
-                    series.length === 0 && seriesName.trim() !== ''
-                    &&
-                    <p>No TV series have been found with this name</p> 
+
+                { series.length === 0 && seriesName.trim() !== ''
+                    && <p>No TV series have been found with this name</p> 
                 }
-                {
-                    isFetching && <Loader />
-                }
-                {
-                    !isFetching && <SeriesList list ={this.state.series} />
-                }
+                
+                { isFetching && <Loader /> }
+                
+                { !isFetching && <SeriesList list ={this.state.series} /> }
 
                 
             </div>

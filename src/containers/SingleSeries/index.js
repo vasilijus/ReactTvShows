@@ -16,7 +16,7 @@ class SingleSeries extends Component {
 
     render() {
         const { show } = this.state;
-        console.log(show);
+        console.log(show , " This state");
 
         return (
             <div>
@@ -24,12 +24,15 @@ class SingleSeries extends Component {
                 {
                     show !== null && 
                     <div>
-                        <p>{show.name}</p>
+                        <p>{show.name}({show.language})</p>
                         <p>Premiered - {show.premiered}</p>
                         <p>Rating - {show.rating.average}</p>
                         <p><img alt="Show" src={show.image.medium} /></p>
+                        <p>the show id is ... {show.summary}</p>
                     </div>
                 }
+                
+
                 <p>the show id is ... {this.props.match.params.id}</p>
             </div>
         )

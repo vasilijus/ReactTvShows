@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 
 const SeriesListItem = ({series}) => (
     <li>
-        <Link to={`/series/${series.show.id}`}>        
+        <Link to={`/series/${ series.show.id }`}>        
             {series.show.name}
-        </Link>
-        {series.show.name}
+        </Link> { series.show.name } ({series.show.premiered })
     </li>
 )
 const SeriesList = (props) => {
